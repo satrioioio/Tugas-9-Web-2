@@ -44,10 +44,10 @@
         <div class="sidebar col-md-2 p-3">
             <h3 class="text-white text-center mb-4">SIAKAD</h3>
             <a href="index.php" class="active-link"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
-            <a href="PageMahasiswa.php"><i class="bi bi-people me-2"></i> Data Mahasiswa</a>
-            <a href="PageMatkul.php"><i class="bi bi-book me-2"></i> Data Mata Kuliah</a>
-            <a href="PageDosen.php"><i class="bi bi-person-video3 me-2"></i> Data Dosen</a>
-            <a href="PageNilai.php"><i class="bi bi-clipboard-data me-2"></i> Data Nilai</a>
+            <a href="mahasiswa/PageMahasiswa.php"><i class="bi bi-people me-2"></i> Data Mahasiswa</a>
+            <a href="matkul/PageMatkul.php"><i class="bi bi-book me-2"></i> Data Mata Kuliah</a>
+            <a href="Dosen/PageDosen.php"><i class="bi bi-person-video3 me-2"></i> Data Dosen</a>
+            <a href="nilai/PageNilai.php"><i class="bi bi-clipboard-data me-2"></i> Data Nilai</a>
         </div>
 
         <div class="col-md-10 p-4 bg-light">
@@ -61,7 +61,7 @@
                     <div class="card text-white bg-primary mb-3">
                         <div class="card-body">
                             <h5 class="card-title">Mahasiswa</h5>
-                            <p class="card-text fs-2"><i class="bi bi-people"></i> 10</p>
+                            <p class="card-text fs-2"><i class="bi bi-people"></i> Xx</p>
                         </div>
                     </div>
                 </div>
@@ -69,7 +69,7 @@
                     <div class="card text-white bg-success mb-3">
                         <div class="card-body">
                             <h5 class="card-title">Dosen</h5>
-                            <p class="card-text fs-2"><i class="bi bi-person-video3"></i> 10</p>
+                            <p class="card-text fs-2"><i class="bi bi-person-video3"></i> Xx</p>
                         </div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                     <div class="card text-white bg-warning mb-3">
                         <div class="card-body">
                             <h5 class="card-title">Mata Kuliah</h5>
-                            <p class="card-text fs-2"><i class="bi bi-book"></i> 10</p>
+                            <p class="card-text fs-2"><i class="bi bi-book"></i> Xx</p>
                         </div>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
                     <div class="card text-white bg-info mb-3">
                         <div class="card-body">
                             <h5 class="card-title">Data Nilai</h5>
-                            <p class="card-text fs-2"><i class="bi bi-journal"></i> 10</p>
+                            <p class="card-text fs-2"><i class="bi bi-journal"></i> Xx</p>
                         </div>
                     </div>
                 </div>

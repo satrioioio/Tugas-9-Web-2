@@ -1,5 +1,5 @@
 <?php
-include 'KoneksiDb.php';
+include '../KoneksiDb.php';
 
 $sql = 'SELECT * FROM tbl_matkul';
 $query = mysqli_query($conn, $sql);
@@ -54,17 +54,20 @@ if (!$query) {
 
         <div class="sidebar col-md-2 p-3 d-none d-md-block">
             <h4 class="text-white text-center mb-4">SIAKAD</h4>
-            <a href="index.php"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
-            <a href="PageMahasiswa.php"><i class="bi bi-people me-2"></i> Data Mahasiswa</a>
-            <a href="PageMatkul.php" class="active-link"><i class="bi bi-book me-2"></i> Data Mata Kuliah</a>
-            <a href="PageDosen.php"><i class="bi bi-person-video3 me-2"></i> Data Dosen</a>
-            <a href="PageNilai.php"><i class="bi bi-clipboard-data me-2"></i> Data Nilai</a>
+            <a href="../index.php"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
+            <a href="../mahasiswa/PageMahasiswa.php"><i class="bi bi-people me-2"></i> Data Mahasiswa</a>
+            <a href="../matkul/PageMatkul.php" class="active-link"><i class="bi bi-book me-2"></i> Data Mata Kuliah</a>
+            <a href="../Dosen/PageDosen.php"><i class="bi bi-person-video3 me-2"></i> Data Dosen</a>
+            <a href="../nilai/PageNilai.php"><i class="bi bi-clipboard-data me-2"></i> Data Nilai</a>
         </div>
 
         <div class="col-md-10 p-4 bg-light w-60">
             <div class="card shadow-sm border-0">
-                <div class="card-header bg-white py-3">
+                <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
                     <h6 class="m-0 font-weight-bold text-primary">Data Mata Kuliah</h6>
+                    <a href="tambah.php" class="btn btn-primary btn-sm">
+                        <i class="bi bi-plus-circle me-1"></i> Tambah Matkul
+                    </a>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -75,16 +78,25 @@ if (!$query) {
                                     <th>Nama Matkul</th>
                                     <th>SKS</th>
                                     <th>NIDN</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $i = 1;
                                 while ($row = mysqli_fetch_array($query)) : ?>
                                     <tr>
-                                        <td class="fw-bold"><?= $row[0] ?></td>
+                                        <td class="fw-bold"><?= $row['kodeMatkul'] ?></td>
                                         <td><?= $row[1] ?></td>
-                                        <td><?= $row[2] ?></span></td>
-                                        <td><?= $row[3] ?></td>
+                                        <td><?= $row['sks'] ?></span></td>
+                                        <td><?= $row['nidn'] ?></td>
+                                        <td>
+                                            <a href="edit.php?kodeMatkul=<?= $row['kodeMatkul'] ?>" class="btn btn-warning btn-sm me-0" title="Edit">
+                                                <i class="bi bi-pencil"></i>
+                                            </a>
+                                            <a href="delete.php?kodeMatkul=<?= $row['kodeMatkul'] ?>" class="btn btn-danger btn-sm" title="Hapus" onclick="return confirm('Apakah Anda yakin ingin menghapus data dosen ini?')">
+                                                <i class="bi bi-trash"></i>
+                                            </a>
+                                        </td>
                                     </tr>
                                 <?php $i++;
                                 endwhile; ?>

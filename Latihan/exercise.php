@@ -1,10 +1,6 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'root', 'iowisnu1', 'latihan');
-
-if (!$conn) {
-    die('Gagal Terhubung MySQL: ' . mysqli_connect_error());
-}
+include '../KoneksiDb.php';
 
 $sql = 'SELECT * FROM tb_mahasiswa';
 $query = mysqli_query($conn, $sql);
@@ -13,6 +9,14 @@ if (!$query) {
     die('SQL Error: ' . mysqli_error($conn));
 }
 ?>
+
+<h2>Data Mahasiswa</h2>
+
+<button>
+    <a href="tambah.php">Tambah Data</a>
+</button>
+<br>
+<br>
 
 <table border="1">
     <thead>
@@ -23,6 +27,7 @@ if (!$query) {
             <th>Alamat</th>
             <th>Email</th>
             <th>No.Hp</th>
+            <th>Aksi</th>
         </tr>
     </thead>
     <tbody>
@@ -35,6 +40,10 @@ if (!$query) {
                 <td><?php echo $row['prodi'] ?></td>
                 <td><?php echo $row['email'] ?></td>
                 <td><?php echo $row['nohp'] ?></td>
+                <td>
+                    <a href="edit.php?nim=<?= $row['nim']; ?>">Ubah</a> |
+                    <a href="delete.php?nim=<?= $row['nim']; ?>">Hapus</a>
+                </td>
             </tr>
         <?php $i++;
         endwhile ?>
